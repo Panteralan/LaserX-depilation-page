@@ -1,0 +1,321 @@
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+
+
+/* Efectos de animación */
+img {
+    max-width: 100% !important;
+    view-timeline-name: --image !important;
+    view-timeline-axis: block !important;
+
+    animation-timeline: --image !important;
+    animation-name: show !important;
+
+    animation-range: entry 25% cover 50% !important; 
+
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+
+}
+
+h1, h2, h3, .card-title {
+  font-family: 'Playfair Display', serif;
+}
+
+.hover-underline {
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+
+.hover-underline::after,
+.hover-underline::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff0000, #00ffff);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+  top: -5px;
+  transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
+
+
+.navbar {
+  background-color: rgb(13, 13, 14) !important;
+}
+
+
+
+.hero {
+  position: relative;
+  height: 69vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.section-padding {
+      padding: 80px 0;
+    background: linear-gradient(
+      180deg,
+      #f8fbff 0%,
+      #e6eef7 40%,
+      #738da8 70%,
+      #1f2f46 100%
+    );
+    background-attachment: fixed;
+    }
+
+
+/* ===== PREMIUM LASER CARDS ===== */
+
+.premium-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  background: #ffffff;
+}
+
+.premium-card img {
+  transition: transform 0.5s ease;
+}
+
+.premium-card:hover img {
+  transform: scale(1.06);
+}
+
+.premium-card .card-body {
+  padding: 30px;
+}
+
+.premium-card .card-title {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.premium-card .price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #b89b5e; /* dorado suave */
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Línea decorativa elegante */
+.premium-card::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: #a78c52;
+  transition: width 0.4s ease;
+}
+
+.premium-card:hover::after {
+  width: calc(100% - 60px);
+}
+
+
+
+
+
+/* FLIP CARD */
+.flip-card {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 2 / 3;
+  perspective: 2000px;
+  margin: auto;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 28px;
+  transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+  transform-style: preserve-3d;
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  backface-visibility: hidden;
+}
+
+
+.flip-card-front {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(218, 189, 193);
+}
+.flip-card-back {
+  font-size: 1.25rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background-color: #B1CFC8;
+  transform: rotateY(180deg);
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(-180deg);
+}
+
+
+
+
+#presentacion {
+  background-image: url('/img/LaserX.jpg');     /* NO contain */
+  background-position: center;
+  background-repeat: repeat;
+  min-height: 55vh;                /* altura mínima visible */
+  display: flex;
+  align-items: center;
+  color: white;                    /* si la imagen es oscura */
+  padding: 80px 0;
+}
+
+#my_image img {
+  border-radius: 200px;
+}
+
+
+footer ul {
+  background-color: #1b1f25;
+  display: flex;
+  justify-content: center;   /* mejor que absolute */
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li a {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  margin: 0 8px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #2c2323;
+  z-index: 1;
+}
+
+footer ul li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+footer ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+footer ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+  z-index: 2;
+}
+
+footer ul li a:hover:before {
+  top: 0;
+}
+
+footer ul li:nth-child(1) a:before {
+  background: linear-gradient(
+  45deg,
+  #f09433,
+  #e6683c,
+  #dc2743,
+  #cc2366,
+  #bc1888
+);
+}
+
+footer ul li:nth-child(2) a:before {
+  background: #25D366;
+}
+
+footer ul li:nth-child(3) a:before {
+  background: #EA4335;
+}
